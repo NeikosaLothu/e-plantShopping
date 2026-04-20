@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# 🌿 Paradise Nursery - ePlant Shopping App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React + Redux shopping cart application for an online plant store called **Paradise Nursery**.
 
-## Available Scripts
+## 🚀 Live Demo
+https://stupendous-dragon-f77d25.netlify.app
 
-In the project directory, you can run:
+## 📂 GitHub Repository
+https://github.com/NeikosaLothu/e-plantShopping
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📌 Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 🌱 Landing page with background image and "Get Started" button  
+- 🪴 Product listing with 3 categories:
+  - Medicinal Plants
+  - Aromatic Plants
+  - Indoor Plants  
+- ➕ Add to Cart functionality  
+- 🚫 Add button disables after adding item  
+- 🛒 Cart page with:
+  - Increase / Decrease quantity  
+  - Delete items  
+  - Total cost calculation  
+- 🔄 Dynamic cart count in navbar  
+- ⚙️ State management using **Redux Toolkit**
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Tech Stack
 
-### `npm run build`
+- React.js  
+- Redux Toolkit  
+- JavaScript (ES6)  
+- CSS  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📁 Project Structure
+src/
+├── components/
+│ ├── AboutUs.jsx
+│ ├── ProductList.jsx
+│ ├── CartItem.jsx
+│ └── Navbar.jsx
+├── redux/
+│ └── CartSlice.jsx
+├── App.jsx
+└── App.css
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## ▶️ How to Run Locally
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+npm install
+npm start
