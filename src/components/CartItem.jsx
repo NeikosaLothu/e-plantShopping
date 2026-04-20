@@ -1,12 +1,13 @@
 import { useSelector, useDispatch } from "react-redux";
 import {
-    increaseQty,
-    decreaseQty,
-    deleteItem
+    addItem,
+    removeItem,
+    updateQuantity
 } from "../redux/CartSlice";
 
 function CartItem({ goHome }) {
-    const cart = useSelector((state) => state.cart);
+  // ✅ FIX: correct state
+    const cart = useSelector((state) => state.cart.items);
     const dispatch = useDispatch();
 
     const getTotal = () => {
@@ -21,18 +22,33 @@ function CartItem({ goHome }) {
 
         {cart.length === 0 && <p>Cart is empty</p>}
 
-        {cart.map((item, index) => (
+        {cart.map((item) => (
         <div
-            key={index}
+            key={item.id}
             style={{ border: "1px solid gray", margin: "10px", padding: "10px" }}
         >
             <h4>{item.name}</h4>
             <p>Price: ${item.price}</p>
-            <p>Total: ${item.price * item.quantity}</p>
+          <p>Total: ${item.price * item.quantity}</p>
 
-            <button onClick={() => dispatch(increaseQty(index))}>+</button>
-            <button onClick={() => dispatch(decreaseQty(index))}>-</button>
-            <button onClick={() => dispatch(deleteItem(index))}>
+          {/* ✅ FIX: use correct reducer functions */}
+            <button
+            onClick={() =>
+                dispatch(updateQuantity({ id: item.id, amount: 1 }))
+            }
+            >
+            +
+            </button>
+
+            <button
+            onClick={() =>
+                dispatch(updateQuantity({ id: item.id, amount: -1 }))
+            }
+            >
+            -
+            </button>
+
+            <button onClick={() => dispatch(removeItem(item.id))}>
             Delete
             </button>
         </div>

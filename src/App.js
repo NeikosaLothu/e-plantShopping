@@ -7,8 +7,13 @@ import CartItem from "./components/CartItem";
 function App() {
   const [page, setPage] = useState("home");
 
-  // ✅ Redux cart
-  const cart = useSelector((state) => state.cart);
+  // ✅ FIX: correct Redux state access
+  const cart = useSelector((state) => state.cart.items);
+
+  // ✅ FIX: define function OUTSIDE JSX
+  const handleGetStartedClick = () => {
+    setPage("products");
+  };
 
   return (
     <div>
@@ -40,7 +45,8 @@ function App() {
           <h1>Paradise Nursery</h1>
           <p>Welcome to our plant shop 🌿</p>
 
-          <button onClick={() => setPage("products")}>
+          {/* ✅ FIX: proper button */}
+          <button onClick={handleGetStartedClick}>
             Get Started
           </button>
         </div>
@@ -53,6 +59,7 @@ function App() {
       {page === "cart" && (
         <CartItem goHome={() => setPage("products")} />
       )}
+
     </div>
   );
 }
