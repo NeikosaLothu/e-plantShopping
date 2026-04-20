@@ -28,8 +28,12 @@ const cartSlice = createSlice({
         const item = state.items.find(i => i.id === id);
 
         if (item) {
-        item.quantity += amount;
-        if (item.quantity <= 0) {
+        const newQty = item.quantity + amount;
+
+        if (newQty > 0) {
+            item.quantity = newQty;
+        } else {
+          // remove if quantity goes to 0
             state.items = state.items.filter(i => i.id !== id);
         }
         }
